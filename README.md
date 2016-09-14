@@ -2,11 +2,11 @@
 
 This is docker image to run a MySQL client.
 
-Image size: 16 MB
+[![](https://badge.imagelayers.io/imega/mysql-client:1.1.0.svg)](https://imagelayers.io/?images=imega/mysql-client:1.1.0 'Get your own badge on imagelayers.io')
 
-From image: gliderlabs/alpine:3.1
+From image: alpine:3.2
 
-Mysql client: 5.5.40-r1
+Mysql client: 5.5.43-r1
 
 ## Usage
 You make [container with MySQL server](http://imega.club/2015/04/30/docker-image-mysql).
@@ -14,12 +14,5 @@ You make [container with MySQL server](http://imega.club/2015/04/30/docker-image
 Mysql console
 
 ```
-$ docker run -v /path/to/dumps:/sql --link mysqlsrv:mysqlsrv -it imega/mysql-client -h mysqlsrv
+$ docker run -v /path/to/dumps:/sql --link mysqlsrv:mysqlsrv -it imega/mysql-client:1.1.0 mysql --host=example.com --user=root --password=123321 --database=mydb --execute='show tables;'
 ```
-
-Mysql dump
-
-```
-$ docker run -v /path/to/dumps:/sql --link mysqlsrv:mysqlsrv imega/mysql-client -h mysqlsrv -D imega -e "source /sql/dump.sql"
-```
-PS: Thanks [vasiliy-t](https://github.com/vasiliy-t)
