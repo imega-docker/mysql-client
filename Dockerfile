@@ -1,7 +1,6 @@
-FROM alpine:3.2
+FROM imega/base-builder:1.1.0
 
 MAINTAINER Dmitry Gavriloff <info@imega.ru>
 
-RUN echo "@stale http://dl-4.alpinelinux.org/alpine/v3.1/main" >> /etc/apk/repositories && \
-    apk add --update mysql-client@stale && \
+RUN apk add --update mysql-client && \
     rm -rf /var/cache/apk/*
