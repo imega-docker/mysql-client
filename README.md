@@ -2,7 +2,7 @@
 
 This is docker image to run a MySQL client.
 
-[![](https://images.microbadger.com/badges/image/imega-docker/mysql-client.svg)](http://microbadger.com/images/imega-docker/mysql-client "Get your own image badge on microbadger.com") [![CircleCI](https://circleci.com/gh/imega-docker/mysql-client.svg?style=svg)](https://circleci.com/gh/imega-docker/mysql-client) [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star&maxAge=2592000)](https://github.com/imega-docker/mysql-client)
+[![](https://images.microbadger.com/badges/image/imega/mysql-client.svg)](http://microbadger.com/images/imega/mysql-client "Get your own image badge on microbadger.com") [![CircleCI](https://circleci.com/gh/imega-docker/mysql-client.svg?style=svg)](https://circleci.com/gh/imega-docker/mysql-client) [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star&maxAge=2592000)](https://github.com/imega-docker/mysql-client)
 
 Image size: 34 MB
 
