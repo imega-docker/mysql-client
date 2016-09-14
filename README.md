@@ -2,13 +2,13 @@
 
 This is docker image to run a MySQL client.
 
-[![](https://badge.imagelayers.io/imega/mysql-client:1.3.0.svg)](https://imagelayers.io/?images=imega/mysql-client:1.3.0 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/imega-docker/mysql-client.svg)](http://microbadger.com/images/imega-docker/mysql-client "Get your own image badge on microbadger.com") [![CircleCI](https://circleci.com/gh/imega-docker/mysql-client.svg?style=svg)](https://circleci.com/gh/imega-docker/mysql-client) [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star&maxAge=2592000)](https://github.com/imega-docker/mysql-client)
 
 Image size: 34 MB
 
-From image: alpine:3.3
+From image: alpine:3.4
 
-Mysql client: 10.1.12-r1
+Mysql client: 10.1.14-r3
 
 ## Usage
 You make [container with MySQL server](http://imega.club/2015/04/30/docker-image-mysql).
@@ -37,16 +37,16 @@ $ docker run --rm \
 ```
 
 ## Alpine Packages
-  - mariadb-common
-  - musl
-  - zlib
-  - libcrypto1.0
-  - ncurses-terminfo-base
-  - ncurses-terminfo
-  - ncurses-libs
-  - libssl1.0
-  - mariadb-client
-  - mysql-client
+  - mariadb-common (10.1.14-r3)
+  - musl (1.1.14-r11)
+  - zlib (1.2.8-r2)
+  - libcrypto1.0 (1.0.2h-r2)
+  - ncurses-terminfo-base (6.0-r7)
+  - ncurses-terminfo (6.0-r7)
+  - ncurses-libs (6.0-r7)
+  - libssl1.0 (1.0.2h-r2)
+  - mariadb-client (10.1.14-r3)
+  - mysql-client (10.1.14-r3)
 
 ## The MIT License (MIT)
 
