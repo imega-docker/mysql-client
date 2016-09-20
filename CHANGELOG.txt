@@ -2,6 +2,7 @@
 
   * Use base image on alpine 3.4
   * Mysql client: 10.1.14-r3
+  * Always will check whether the server is available.
 
 ### 10.1.12
 

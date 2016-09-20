@@ -6,18 +6,14 @@ build:
 	@docker run --rm \
 		-v $(CURDIR)/runner:/runner \
 		-v $(CURDIR)/build:/build \
+		-v $(CURDIR)/src:/src \
 		imega/base-builder \
-		--packages="mysql-client"
+		--packages="mysql-client busybox"
 
 test:
 	@docker build -t imega/mysql-client:test .
 
 	@docker run -d --name server_db imega/mysql
-
-	@docker run --rm=$(DOCKER_RM) \
-		--link server_db:server \
-		imega/mysql-client:test \
-		mysqladmin --silent --host=server --wait=5 ping
 
 	@docker run --rm=$(DOCKER_RM) \
 		-v $(CURDIR)/tests:/data \
