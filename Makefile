@@ -1,4 +1,4 @@
-BUILDER_VER = 1.7.0
+BUILDER_VER = 1.8.0
 IMAGE=imega/mysql-client
 TAG=latest
 
