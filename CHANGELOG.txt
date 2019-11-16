@@ -1,3 +1,8 @@
+### 10.2.26
+
+  * Use base image on alpine 3.8
+  * Mysql client: 10.2.26
+
 ### 10.1.41
 
   * Use base image on alpine 3.7
