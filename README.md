@@ -2,15 +2,16 @@
 
 This is docker image to run a MySQL client.
 
-[![](https://images.microbadger.com/badges/image/imega/mysql-client.svg)](http://microbadger.com/images/imega/mysql-client "Get your own image badge on microbadger.com") [![CircleCI](https://circleci.com/gh/imega-docker/mysql-client.svg?style=svg)](https://circleci.com/gh/imega-docker/mysql-client) [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star&maxAge=2592000)](https://github.com/imega-docker/mysql-client)
+[![](https://images.microbadger.com/badges/version/imega/mysql-client.svg)](https://microbadger.com/images/imega/mysql-client "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/imega/mysql-client.svg)](http://microbadger.com/images/imega/mysql-client "Get your own image badge on microbadger.com") [![CircleCI](https://circleci.com/gh/imega-docker/mysql-client.svg?style=svg)](https://circleci.com/gh/imega-docker/mysql-client) [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star&maxAge=2592000)](https://github.com/imega-docker/mysql-client)
 
 Image size: 36 MB
 
 From image: alpine:3.5
 
-Mysql client: 10.1.21-r0
+Mysql client: 10.1.32
 
 ## Usage
+
 You make [container with MySQL server](http://imega.club/2015/04/30/docker-image-mysql).
 
 Mysql console
@@ -29,6 +30,7 @@ $ docker run -it -v /path/to/dumps:/data \
 ```
 
 If the connection cannot be established, wait and retry instead of aborting.
+
 ```
 $ docker run --rm \
     --link mysqlsrv:mysqlsrv \
@@ -37,21 +39,22 @@ $ docker run --rm \
 ```
 
 ## Alpine Packages
-  - musl (1.1.15-r6)
-  - busybox (1.25.1-r0)
-  - mariadb-common (10.1.21-r0)
-  - libressl2.4-libcrypto (2.4.4-r0)
-  - ncurses-terminfo-base (6.0-r7)
-  - ncurses-terminfo (6.0-r7)
-  - ncurses-libs (6.0-r7)
-  - libressl2.4-libssl (2.4.4-r0)
-  - zlib (1.2.8-r2)
-  - mariadb-client (10.1.21-r0)
-  - mysql-client (10.1.21-r0)
+
+-   musl (1.1.15-r6)
+-   busybox (1.25.1-r0)
+-   mariadb-common (10.1.21-r0)
+-   libressl2.4-libcrypto (2.4.4-r0)
+-   ncurses-terminfo-base (6.0-r7)
+-   ncurses-terminfo (6.0-r7)
+-   ncurses-libs (6.0-r7)
+-   libressl2.4-libssl (2.4.4-r0)
+-   zlib (1.2.8-r2)
+-   mariadb-client (10.1.21-r0)
+-   mysql-client (10.1.21-r0)
 
 ## The MIT License (MIT)
 
-Copyright © 2016 iMega <info@imega.ru>
+Copyright © 2020 iMega <info@imega.ru>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

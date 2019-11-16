@@ -1,6 +1,7 @@
-FROM imega/base-builder:1.2.0
+FROM scratch
 
-MAINTAINER Dmitry Gavriloff <info@imega.ru>
+LABEL maintainer="Dmitry Stoletoff info@imega<dot>ru" \
+    description="This is docker image to run a MySQL client."
 
 ADD build/rootfs.tar.gz /
 
