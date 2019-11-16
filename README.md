@@ -6,9 +6,9 @@ This is docker image to run a MySQL client.
 
 Image size: 36 MB
 
-From image: alpine:3.5
+From image: alpine:3.6
 
-Mysql client: 10.1.32
+Mysql client: 10.1.40
 
 ## Usage
 

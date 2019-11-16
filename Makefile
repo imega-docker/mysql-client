@@ -1,4 +1,4 @@
-BUILDER_VER = 1.4.0
+BUILDER_VER = 1.5.0
 IMAGE=imega/mysql-client
 TAG=latest
 
@@ -14,7 +14,7 @@ buildfs:
 		imega/base-builder:$(BUILDER_VER) \
 		--packages="mysql-client busybox"
 
-test:
+test: clean
 	@docker build -t $(IMAGE):test .
 	@docker run -d -e MYSQL_ROOT_PASSWORD=qwerty \
 		-v $(CURDIR)/schemas:/docker-entrypoint-initdb.d \
@@ -32,7 +32,6 @@ clean:
 	@-docker rm -fv server_db
 
 release:
-	@docker login --username $(DOCKER_USER) --password $(DOCKER_PASS)
 	@docker push $(IMAGE):$(TAG)
 	@docker push $(IMAGE):latest
 
