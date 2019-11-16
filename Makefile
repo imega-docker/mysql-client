@@ -12,7 +12,7 @@ buildfs:
 		-v $(CURDIR)/build:/build \
 		-v $(CURDIR)/src:/src \
 		imega/base-builder:$(BUILDER_VER) \
-		--packages="mysql-client busybox"
+		--packages="mysql-client@edge-main busybox"
 
 test: clean
 	@docker build -t $(IMAGE):test .
@@ -32,6 +32,7 @@ clean:
 	@-docker rm -fv server_db
 
 release:
+	@docker login --username $(DOCKER_USER) --password $(DOCKER_PASS)
 	@docker push $(IMAGE):$(TAG)
 	@docker push $(IMAGE):latest
 
