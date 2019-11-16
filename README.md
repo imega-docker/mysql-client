@@ -4,11 +4,7 @@ This is docker image to run a MySQL client.
 
 [![](https://images.microbadger.com/badges/version/imega/mysql-client.svg)](https://microbadger.com/images/imega/mysql-client "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/imega/mysql-client.svg)](http://microbadger.com/images/imega/mysql-client "Get your own image badge on microbadger.com") [![CircleCI](https://circleci.com/gh/imega-docker/mysql-client.svg?style=svg)](https://circleci.com/gh/imega-docker/mysql-client) [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star&maxAge=2592000)](https://github.com/imega-docker/mysql-client)
 
-Image size: 36 MB
-
-From image: alpine:3.6
-
-Mysql client: 10.1.40
+From image: alpine:3.7
 
 ## Usage
 
@@ -37,20 +33,6 @@ $ docker run --rm \
     imega/mysql-client \
     mysqladmin --silent --host=mysqlsrv --wait=5 ping
 ```
-
-## Alpine Packages
-
--   musl (1.1.15-r6)
--   busybox (1.25.1-r0)
--   mariadb-common (10.1.21-r0)
--   libressl2.4-libcrypto (2.4.4-r0)
--   ncurses-terminfo-base (6.0-r7)
--   ncurses-terminfo (6.0-r7)
--   ncurses-libs (6.0-r7)
--   libressl2.4-libssl (2.4.4-r0)
--   zlib (1.2.8-r2)
--   mariadb-client (10.1.21-r0)
--   mysql-client (10.1.21-r0)
 
 ## The MIT License (MIT)
 
