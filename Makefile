@@ -6,7 +6,7 @@ build: buildfs test
 	@docker build -t $(IMAGE):$(TAG) .
 	@docker tag $(IMAGE):$(TAG) $(IMAGE):latest
 
-buildfs:
+buildfs: login
 	@docker run --rm \
 		-v $(CURDIR)/runner:/runner \
 		-v $(CURDIR)/build:/build \
@@ -14,7 +14,7 @@ buildfs:
 		imega/base-builder:$(BUILDER_VER) \
 		--packages="mysql-client@edge-main busybox"
 
-test: clean
+test: login clean
 	@docker build -t $(IMAGE):test .
 	@docker run -d -e MYSQL_ROOT_PASSWORD=qwerty \
 		-v $(CURDIR)/schemas:/docker-entrypoint-initdb.d \
@@ -31,8 +31,10 @@ test: clean
 clean:
 	@-docker rm -fv server_db
 
-release:
+login:
 	@docker login --username $(DOCKER_USER) --password $(DOCKER_PASS)
+
+release: login
 	@docker push $(IMAGE):$(TAG)
 	@docker push $(IMAGE):latest
 

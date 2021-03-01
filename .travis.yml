@@ -7,6 +7,7 @@ services:
 script:
   - NV=`curl --silent "https://raw.githubusercontent.com/alpinelinux/aports/master/main/mariadb/APKBUILD" | grep pkgver= | sed 's/pkgver=//g'`
   - RELEASE=0
+  - make login
   - docker pull imega/mysql-client:$NV || RELEASE=1
   - make build TAG=$NV || exit 1
 after_success:
