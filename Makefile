@@ -27,7 +27,7 @@ test: clean
 		-v $(CURDIR)/schemas:/docker-entrypoint-initdb.d \
 		--name server_db \
 		mysql:5.7.19
-	@docker run --rm -it --link=server_db:server_db \
+	@docker run --rm -t --link=server_db:server_db \
 		imega/mysql-client:test mysql \
 		--host=server_db \
 		--database=imega \
