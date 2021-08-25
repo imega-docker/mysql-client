@@ -2,9 +2,9 @@
 
 This is docker image to run a MySQL client.
 
-[![](https://images.microbadger.com/badges/version/imega/mysql-client.svg)](https://microbadger.com/images/imega/mysql-client "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/imega/mysql-client.svg)](http://microbadger.com/images/imega/mysql-client "Get your own image badge on microbadger.com") [![CircleCI](https://circleci.com/gh/imega-docker/mysql-client.svg?style=svg)](https://circleci.com/gh/imega-docker/mysql-client) [![Build Status](https://travis-ci.org/imega-docker/mysql-client.svg?branch=master)](https://travis-ci.org/imega-docker/mysql-client) [![GitHub stars](https://img.shields.io/github/stars/imega-docker/mysql-client.svg?style=social&label=Star&maxAge=2592000)](https://github.com/imega-docker/mysql-client)
+![Build status](https://github.com/imega-docker/mysql-client/actions/workflows/release.yml/badge.svg)
 
-From image: alpine:3.10
+From image: alpine:3.13
 
 ## Usage
 
