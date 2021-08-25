@@ -2,11 +2,18 @@ BUILDER_VER = 1.9.6
 IMAGE=imega/mysql-client
 TAG=latest
 
+release: TAG=$(shell curl --silent "https://raw.githubusercontent.com/alpinelinux/aports/master/main/mariadb/APKBUILD" | grep pkgver= | sed 's/pkgver=//g')
+release: build
+	@docker pull $(IMAGE):${TAG} || ( \
+		docker push $(IMAGE):$(TAG) && \
+		docker push $(IMAGE):latest \
+	)
+
 build: buildfs test
 	@docker build -t $(IMAGE):$(TAG) .
 	@docker tag $(IMAGE):$(TAG) $(IMAGE):latest
 
-buildfs: login
+buildfs:
 	@docker run --rm \
 		-v $(CURDIR)/runner:/runner \
 		-v $(CURDIR)/build:/build \
@@ -14,7 +21,7 @@ buildfs: login
 		imega/base-builder:$(BUILDER_VER) \
 		--packages="mysql-client@edge-main busybox"
 
-test: login clean
+test: clean
 	@docker build -t $(IMAGE):test .
 	@docker run -d -e MYSQL_ROOT_PASSWORD=qwerty \
 		-v $(CURDIR)/schemas:/docker-entrypoint-initdb.d \
@@ -30,12 +37,5 @@ test: login clean
 
 clean:
 	@-docker rm -fv server_db
-
-login:
-	@docker login --username $(DOCKER_USER) --password $(DOCKER_PASS)
-
-release: login
-	@docker push $(IMAGE):$(TAG)
-	@docker push $(IMAGE):latest
 
 .PHONY: build
