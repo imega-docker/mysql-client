@@ -14,7 +14,7 @@ Mysql console
 
 ```
 $ docker run --rm \
-    mysql-client \
+    imega/mysql-client \
     mysql --host=example.com --user=root --password=123321 --database=test --execute='show tables;'
 ```
 
